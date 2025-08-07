@@ -7,11 +7,9 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 - [Basic Syntax & Structure](#basic-syntax--structure)
 - [Naming Style & Spacing](#naming-style--spacing)
 - [Parsing Details & Errors](#parsing-details--errors)
-
-## Media Types
-
-- [Anime](#anime)
-- [Music](#music)
+- [Media Types](#media-types)
+  - [Anime](#anime)
+  - [Music](#music)
 
 ## Basic Syntax & Structure
 
