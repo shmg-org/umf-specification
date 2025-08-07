@@ -7,7 +7,7 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 - [Basic Syntax & Structure](#basic-syntax--structure)
 - [Naming Style & Spacing](#naming-style--spacing)
 - [Parsing Details & Errors](#parsing-details--errors)
-- [Media Types](#media-types)
+- [Media Types & Presets](#media-types--presets)
   - [Anime](#anime)
   - [Music](#music)
 
@@ -84,13 +84,13 @@ If no rules can apply, throw an error. Otherwise, keep parsing the line using th
 
 The parser can throw errors based on it's custom formatting rules, but the following errors are required to thrown when the specified condition is met:
 
-- **Empty Metadata**: When the metadata is empty.
+- **Empty Media Name**: When the media name is empty.
 - **Empty Header**: When the name of a header is empty.
 - **Empty Field Name**: When the name of a field is empty.
 - **Empty Field Value**: When the value of a field is empty.
 - **Invalid Line**: When the line cannot be parsed.
 
-## Media Types
+## Media Types & Presets
 
 UMF provides some presets for how the metadata of a media type should be defined. All the headers are fields defined in this specification are required, but extra ones can be added for your personal use.
 
