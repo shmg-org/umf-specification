@@ -13,6 +13,7 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 
 ## Implementataions
 
+- [TypeScript](https://github/shmg-org/umf-typescript)
 - [Zig](https://github.com/shmg-org/umf-zig)
 
 ## Basic Syntax & Structure
@@ -97,6 +98,9 @@ The parser can throw errors based on it's custom formatting rules, but the follo
 ## Media Types & Presets
 
 UMF provides some presets for how the metadata of a media type should be defined. All the headers are fields defined in this specification are required, but extra ones can be added for your personal use.
+
+> [!NOTE]
+> These presets should be implemented on the apllication side, meaning applications that uses those presets need to implement and follow this specificatoin themself.
 
 ### Anime
 
