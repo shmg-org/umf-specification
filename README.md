@@ -4,16 +4,16 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 
 ## Sections
 
-- [Basic Syntax & Structure](#basic-syntax-structure)
-- [Naming Style & Spacing](#naming-style-spacing)
-- [Parsing Details & Errors](#parsing-details-errors)
+- [Basic Syntax & Structure](#basic-syntax--structure)
+- [Naming Style & Spacing](#naming-style--spacing)
+- [Parsing Details & Errors](#parsing-details--errors)
 
 ## Media Types
 
 - [Anime](#anime)
 - [Music](#music)
 
-# Basic Syntax & Structure
+## Basic Syntax & Structure
 
 A metadata consist of a media name, headers, and fields. The first line of the metadata must always be the media name, followed by fields or headers. A header defines the scope of the fields below it, and a field is considered global if it is not under any header. If a line starts with "#" it is considered as a comment.
 
@@ -42,7 +42,7 @@ A metadata consist of a media name, headers, and fields. The first line of the m
 # This is a comment.
 ```
 
-# Naming Style & Spacing
+## Naming Style & Spacing
 
 When defining a header or field, the first character in the name must always be capitalized. It is recommended to have an empty line after the media name, a space around the header name, and a space after the ":" character in a field. But those are not requirements, you can format them as you like.
 
@@ -66,7 +66,7 @@ Field1:Value1
 Field2:Value2
 ```
 
-# Parsing Details & Errors
+## Parsing Details & Errors
 
 UMF is a line by line format, meaning the base unit of parsing is a line. Before parsing a line, the parser must remove the spaces at the start and the end of the line. The first line of a metadata is always the media name, the lines after can be parsed using the following rules, the parser must check the line against each condition in order.
 
@@ -79,7 +79,7 @@ If no rules can apply, throw an error. Otherwise, keep parsing the line using th
 - **Header**: Exclude the starting "\[" and the ending "\]", and trim the result.
 - **Field**: Split the line with the first ":" and trim all the parts, the first part is the name, the second part is the value.
 
-## Errors
+### Errors
 
 The parser can throw errors based on it's custom formatting rules, but the following errors are required to thrown when the specified condition is met:
 
@@ -89,11 +89,11 @@ The parser can throw errors based on it's custom formatting rules, but the follo
 - **Empty Field Value**: When the value of a field is empty.
 - **Invalid Line**: When the line cannot be parsed.
 
-# Media Types
+## Media Types
 
 UMF provides some presets for how the metadata of a media type should be defined. All the headers are fields defined in this specification are required, but extra ones can be added for your personal use.
 
-## Anime
+### Anime
 
 The anime preset uses headers to add season specific metadata. If there are fields that stay the same across all seasons, it's recommended to define them as global fields. The metadata must include the following fields:
 
@@ -110,7 +110,7 @@ The anime preset uses headers to add season specific metadata. If there are fiel
   - Accepted audio codec: `AAC` or `FLAC`.
   - Formatted as: `<Video Codec> (<Audio Codec>)`
 
-## Music
+### Music
 
 The music preset uses headers to add track specific metadata. If there are fields that stay the same across all seasons, it's recommended to define them as global fields. The metadata must include the following fields:
 
