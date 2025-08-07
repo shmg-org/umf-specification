@@ -85,7 +85,7 @@ If no rules can apply, throw an error. Otherwise, keep parsing the line using th
 The parser can throw errors based on it's custom formatting rules, but the following errors are required to thrown when the specified condition is met:
 
 - **Empty Media Name**: When the media name is empty.
-- **Empty Header**: When the name of a header is empty.
+- **Empty Header Name**: When the name of a header is empty.
 - **Empty Field Name**: When the name of a field is empty.
 - **Empty Field Value**: When the value of a field is empty.
 - **Invalid Line**: When the line cannot be parsed.
@@ -100,9 +100,9 @@ The anime preset uses headers to add season specific metadata. If there are fiel
 
 - Type: The type of the source video.
   - Accepted type: `BDRip` or `WebRip`.
-- Source: The source of the video (encoder, platform, etc…).
+- Source: The source of the video (encoder, platform, etc...).
   - Formatted as: `<Source Name> (<Source URL?>)`
-- Subtitle: The source of the subtitle (subtitle team, platform, etc…).
+- Subtitle: The source of the subtitle (subtitle team, platform, etc...).
   - Formatted as: `<Source Name> (<Source URL?>)`
 - Resolution: The resolution of the video.
   - Accepted resolution can be `720p`, `1080p`, `1440p`, or `4K`.
@@ -116,7 +116,7 @@ The anime preset uses headers to add season specific metadata. If there are fiel
 The music preset uses headers to add track specific metadata. If there are fields that stay the same across all seasons, it's recommended to define them as global fields. The metadata must include the following fields:
 
 - Type: The type of the source audio.
-  - Accepted type: `BDRipBD`, `GameRip`, `WebRip`
+  - Accepted type: `CDRip`, `GameRip`, or `WebRip`.
 - Performer: The performer of the track (optional).
 - Composer: The compose of the track (optional).
 - Arranger: The arranger of the track (optional).
