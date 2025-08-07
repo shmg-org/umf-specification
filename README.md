@@ -11,6 +11,10 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
   - [Anime](#anime)
   - [Music](#music)
 
+## Implementataions
+
+- [Zig](https://github.com/shmg-org/umf-zig)
+
 ## Basic Syntax & Structure
 
 A metadata consist of a media name, headers, and fields. The first line of the metadata must always be the media name, followed by fields or headers. A header defines the scope of the fields below it, and a field is considered global if it is not under any header. If a line starts with "#" it is considered as a comment.
@@ -75,7 +79,7 @@ UMF is a line by line format, meaning the base unit of parsing is a line. Before
 2. If the line starts with "\[" and end with "\]" it is a header.
 3. If the line includes a ":" it is a field.
 
-If no rules can apply, throw an error. Otherwise, keep parsing the line using the respective rule:
+If no rules can apply to the line, throw an error. Otherwise, keep parsing the line using the respective rule:
 
 - **Header**: Exclude the starting "\[" and the ending "\]", and trim the result.
 - **Field**: Split the line with the first ":" and trim all the parts, the first part is the name, the second part is the value.
@@ -84,7 +88,7 @@ If no rules can apply, throw an error. Otherwise, keep parsing the line using th
 
 The parser can throw errors based on it's custom formatting rules, but the following errors are required to thrown when the specified condition is met:
 
-- **Empty Media Name**: When the media name is empty.
+- **Empty Media Name**: When the media name is empty or not found.
 - **Empty Header Name**: When the name of a header is empty.
 - **Empty Field Name**: When the name of a field is empty.
 - **Empty Field Value**: When the value of a field is empty.
