@@ -40,6 +40,9 @@ A metadata consist of a media name, headers, and fields. The first line of the m
 # This is a comment.
 ```
 
+> [!NOTE]
+> Fields that are under a header have higher priority than global fields, global fields are only used as a fallback.
+
 ## Naming Style & Spacing
 
 When defining a header or field, the first character in the name must always be capitalized. It is recommended to have an empty line after the media name, a space around the header name, and a space after the ":" character in a field. But those are not requirements, you can format them as you like.
