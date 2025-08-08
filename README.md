@@ -129,3 +129,4 @@ The music preset uses headers to add track specific metadata. If there are field
 - Composer: The compose of the track (optional).
 - Arranger: The arranger of the track (optional).
 - Lyricist: The lyricist of the track (optional).
+- Track Number: The index of the track in the album.
