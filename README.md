@@ -18,7 +18,7 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 
 ## Basic Syntax & Structure
 
-A metadata consist of a media name, headers, and fields. The first line of the metadata must always be the media name, followed by fields or headers. A header defines the scope of the fields below it, and a field is considered global if it is not under any header. If a line starts with "#" it is considered as a comment.
+A metadata consists of a media name, headers, and fields. The first line of the metadata must always be the media name, followed by fields or headers. A header defines the scope of the fields below it, and a field is considered global if it is not under any header. If a line starts with "#" it is considered as a comment.
 
 - An example with a header and fields.
 
@@ -76,8 +76,8 @@ Field2:Value2
 
 UMF is a line by line format, meaning the base unit of parsing is a line. Before parsing a line, the parser must remove the spaces at the start and the end of the line. The first line of a metadata is always the media name, the lines after can be parsed using the following rules, the parser must check the line against each condition in order.
 
-1. If the line is empty or start with "#", ignore the line.
-2. If the line starts with "\[" and end with "\]" it is a header.
+1. If the line is empty or starts with "#", ignore the line.
+2. If the line starts with "\[" and ends with "\]" it is a header.
 3. If the line includes a ":" it is a field.
 
 If no rules can apply to the line, throw an error. Otherwise, keep parsing the line using the respective rule:
@@ -87,7 +87,7 @@ If no rules can apply to the line, throw an error. Otherwise, keep parsing the l
 
 ### Errors
 
-The parser can throw errors based on it's custom formatting rules, but the following errors are required to thrown when the specified condition is met:
+The parser can throw errors based on its custom formatting rules, but the following errors are required to be thrown when the specified condition is met:
 
 - **Empty Media Name**: When the media name is empty or not found.
 - **Empty Header Name**: When the name of a header is empty.
@@ -97,10 +97,10 @@ The parser can throw errors based on it's custom formatting rules, but the follo
 
 ## Media Types & Presets
 
-UMF provides some presets for how the metadata of a media type should be defined. All the headers are fields defined in this specification are required, but extra ones can be added for your personal use.
+UMF provides some presets for how the metadata of a media type should be defined. All the headers and fields defined in this specification are required, but extra ones can be added for your personal use.
 
 > [!NOTE]
-> These presets should be implemented on the apllication side, meaning applications that uses those presets need to implement and follow this specificatoin themself.
+> These presets should be implemented on the application side, meaning applications that uses those presets need to implement and follow this specification themselves.
 
 ### Anime
 
@@ -126,7 +126,7 @@ The music preset uses headers to add track specific metadata. If there are field
 - Type: The type of the source audio.
   - Accepted type: `CDRip`, `GameRip`, or `WebRip`.
 - Performer: The performer of the track (optional).
-- Composer: The compose of the track (optional).
+- Composer: The composer of the track (optional).
 - Arranger: The arranger of the track (optional).
 - Lyricist: The lyricist of the track (optional).
 - Track Number: The index of the track in the album.
