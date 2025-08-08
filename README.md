@@ -11,7 +11,7 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
   - [Anime](#anime)
   - [Music](#music)
 
-## Implementataions
+## Implementations
 
 - [TypeScript](https://github.com/shmg-org/umf-typescript)
 - [Zig](https://github.com/shmg-org/umf-zig)
