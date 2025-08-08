@@ -13,7 +13,7 @@ This is the specification for the UMF (Universal Metadata Format). UMF is a stan
 
 ## Implementataions
 
-- [TypeScript](https://github/shmg-org/umf-typescript)
+- [TypeScript](https://github.com/shmg-org/umf-typescript)
 - [Zig](https://github.com/shmg-org/umf-zig)
 
 ## Basic Syntax & Structure
